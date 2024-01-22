@@ -17,7 +17,7 @@ async def auth_user(request: Request, session: AsyncSession = get_session()):
             .removeprefix("bearer ")
             .removeprefix("Bearer ")
         )
-        if await TokenRepository(session).revoke_token(token):
+        if not await TokenRepository(session).revoke_token(token):
             return token_validator(token)
         else:
             raise HTTPException(HTTPStatus.UNAUTHORIZED)

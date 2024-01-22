@@ -15,9 +15,9 @@ class TokenRepository(BaseRepository):
             print("First:", (await self.session.exec(s)).first())
             if (await self.session.exec(s)).first():
                 raise HTTPException(HTTPStatus.UNAUTHORIZED)
-            return True
+            return False
         except NoResultFound:
-            return True
+            return False
 
     async def delete_exp_token(self):
         await self.session.exec(
