@@ -45,6 +45,3 @@ python3 app.py
 
 > [!NOTE]
 > This Project is A Sample Structure FastAPI Project With Alembic and SQLModel and AsyncPG to Can Handle Database With Async.
-
-> [!WARNING]
-> Dont Publish This Template On Github.
